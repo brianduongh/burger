@@ -1,0 +1,13 @@
+{
+  "name": "burger",
+  "version": "1.0.0",
+  "main": "index.js",
+  "repository": "git@github.com:brianduongh/burger.git",
+  "author": "Brian Duong <brianduongh@gmail.com>",
+  "license": "MIT",
+  "dependencies": {
+    "express": "^4.16.4",
+    "express-handlebars": "^3.0.0",
+    "mysql": "^2.16.0"
+  }
+}
