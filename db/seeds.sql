@@ -1,9 +1,9 @@
 -- Seeds for db
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("cheeseburger", true);
+INSERT INTO burgers (burger_name)
+VALUES ("cheeseburger");
 
 INSERT INTO burgers (burger_name, devoured)
-VALUES ("veggieburger", false);
+VALUES ("veggieburger", true);
 
-INSERT INTO burgers (burger_name, devoured)
-VALUES ("smashburger", false);
+INSERT INTO burgers (burger_name)
+VALUES ("smashburger");

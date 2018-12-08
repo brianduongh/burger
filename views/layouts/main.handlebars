@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+		<title>BRIAN!</title>
+		<script src="https://code.jquery.com/jquery.js"></script>
+	</head>
+	<body>
+		{{{ body }}}
+		<script type="text/javascript">
+		// Wait for DOM to load
+			$(() => {
+				$(".create-form").on("submit", (event) => {
+					// Prevents page from reloading
+					event.preventDefault();
+
+					const newBurger = {
+						name: $("#burger").val().trim()
+					};
+					// Send post request
+					$.ajax("/api/burgers", {
+						type: "POST",
+			      data: newBurger
+					}).then(
+						() => {
+							// Reloads page with updated list
+							location.reload();
+						}
+					);
+				});
+			});
+		</script>
+	</body>
+</html>
