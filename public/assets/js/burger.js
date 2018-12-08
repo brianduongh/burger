@@ -25,8 +25,7 @@
       $.ajax("/api/burgers/" + id, {
         type: "PUT"
       }).then(
-        function() {
-          console.log("adsfa");
+        () => {
           location.reload();
         }
       )

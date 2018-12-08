@@ -16,6 +16,7 @@ const printQuestionMarks = (num) => {
 const orm = {
   all: (table, cb) => {
     let queryString = 'SELECT * FROM ' + table + ';';
+    
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -27,15 +28,12 @@ const orm = {
   create: (table, cols, vals, cb) => {
     let queryString = 'INSERT INTO burgers';
 
-      queryString += ' (';
-      queryString += cols.toString();
-      queryString += ') ';
-      queryString += 'VALUES (';
-      queryString += printQuestionMarks(vals.length);
-      queryString += '); ';
-
-      console.log(queryString);
-      console.log(vals);
+    queryString += ' (';
+    queryString += cols.toString();
+    queryString += ') ';
+    queryString += 'VALUES (';
+    queryString += printQuestionMarks(vals.length);
+    queryString += '); ';
 
     connection.query(queryString, vals, (err, result) => {
       if (err) {
@@ -47,8 +45,7 @@ const orm = {
 
   update: (table, condition, cb) => {
     let queryString = 'UPDATE burgers SET devoured = true WHERE ' + condition + ';';
-    console.log(queryString);
-    console.log(condition);
+
     connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
@@ -56,21 +53,6 @@ const orm = {
       cb(result);
     });
   }
-
-  // delete: (table, condition, cb) => {
-  //   let queryString = "DELETE FROM " + table;
-  //
-  //     queryString += " Where ";
-  //     queryString += condition;
-  //
-  //   connection.query(queryString, (err, result) => {
-  //     if (err) {
-  //       throw err;
-  //     }
-  //     cb(result);
-  //   });
-  // }
-
 }
 
 // Export to models/burger.js

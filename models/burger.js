@@ -9,13 +9,13 @@ const burger = {
   },
 
   create: (cols, vals, cb) => {
-    orm.create("burgers", cols, vals, res => {
+    orm.create('burgers', cols, vals, res => {
       cb(res);
     });
   },
 
   update: (condition, cb) => {
-    orm.update("burgers", condition, res => {
+    orm.update('burgers', condition, res => {
       cb(res);
     });
   }
