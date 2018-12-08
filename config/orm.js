@@ -45,14 +45,31 @@ const orm = {
     });
   },
 
-  delete: (table, cb) => {
-    connection.query('DELETE FROM burgers WHERE burger_name = "testBurger"', (err, result) => {
+  update: (table, condition, cb) => {
+    let queryString = 'UPDATE burgers SET devoured = true WHERE ' + condition + ';';
+    console.log(queryString);
+    console.log(condition);
+    connection.query(queryString, (err, result) => {
       if (err) {
         throw err;
       }
       cb(result);
     });
   }
+
+  // delete: (table, condition, cb) => {
+  //   let queryString = "DELETE FROM " + table;
+  //
+  //     queryString += " Where ";
+  //     queryString += condition;
+  //
+  //   connection.query(queryString, (err, result) => {
+  //     if (err) {
+  //       throw err;
+  //     }
+  //     cb(result);
+  //   });
+  // }
 
 }
 
