@@ -3,7 +3,7 @@
 <ul>
   {{#each burgers}}
     {{#unless devoured}}
-      <p>{{ burger_name }}</p>
+      {{> burgers/burger-block }}
     {{/unless}}
   {{/each}}
 </ul>
